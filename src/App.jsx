@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 const TRANSLATIONS = {
   en: {
     navLinks: ['Courses', 'Pricing', 'About', 'Testimonials', 'Contact'],
@@ -93,7 +92,6 @@ const TRANSLATIONS = {
 
 const NAV_IDS = ['courses', 'pricing', 'about', 'testimonials', 'contact'];
 const L = (en, fil, ja) => ({ en, fil, ja });
-
 const COURSES = [
   { icon: '🗣️', title: L('Conversational English','Conversational English','英会話'), desc: L('Build real speaking confidence through daily conversation practice with a certified teacher.','Bumuo ng totoong kumpiyansa sa pagsasalita.','認定講師との毎日の会話練習で話す自信をつけます。'), badge: 'Most Popular', color: '#0ea5e9' },
   { icon: '💼', title: L('Business English','Business English','ビジネス英語'), desc: L('Emails, presentations, meetings and negotiations — master professional English for the workplace.','Emails, presentations, meetings — master professional English para sa trabaho.','メール・プレゼン・会議など職場の英語をマスター。'), badge: 'Career Focus', color: '#6366f1' },
@@ -455,7 +453,6 @@ function AIChatWidget({ th, isLight }) {
 
 // ── MAIN ──────────────────────────────────────────────────────────────────────
 export default function EslLandingPage() {
-  const navigate = useNavigate();
   const [lang, setLang]           = useState('en');
   const [theme, setTheme]         = useState('dark');
   const [menuOpen, setMenuOpen]   = useState(false);
@@ -463,6 +460,7 @@ export default function EslLandingPage() {
   const [scrollY, setScrollY]     = useState(0);
   const [formData, setFormData]   = useState({ name:'',email:'',phone:'',level:'',message:'' });
   const [submitted, setSubmitted] = useState(false);
+ 
   const t = TRANSLATIONS[lang];
   const isLight = theme === 'light';
 
